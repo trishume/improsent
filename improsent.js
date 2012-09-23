@@ -1,5 +1,6 @@
 var handlers = {};
 var history = [];
+var curHistItem = 0;
 
 // ========================================
 // Image
@@ -180,14 +181,23 @@ function wikiDescriptHandler(resultElement,query) {
 
 var showSlides = null;
 var curSlide = 0;
+filepicker.setKey('AQxA1QKbnTAOp3Uy8n35fz'); // filepicker.io api key
 function loadShowHandler(resultElement,query) {
   function loadShow(data) {
     curSlide = 0;
     showSlides = data.slides;
     nextSlideHandler(null,null);
   }
-  if(typeof(Storage)!=="undefined" && localStorage[query]) {
-    loadShow(JSON.parse(localStorage[query]));
+  // if a predefined show is not provided get it from the user
+  if(query == '') {
+    // load from filepicker.io
+    filepicker.getFile(['text/*','application/json'], function(url){
+      // download the file contents
+      filepicker.getContents(url, function(data){
+        loadShow(JSON.parse(data));
+      });
+    });
+    return;
   }
   $.getJSON('shows/'+query+'.json', loadShow);
 }
@@ -207,8 +217,17 @@ function nextSlideHandler(resultElement,query) {
 }
 
 function saveShowHandler(resultElement,query) {
-  if(typeof(Storage)==="undefined") return;
-  localStorage[query] = JSON.stringify({slides:history});
+  // remove the save command from the history
+  history.pop();
+  // generate json
+  var jsonText = JSON.stringify({slides:history});
+  // get temp url with filepicker.io
+  var name = query == '' ? 'myShow' : query;
+  filepicker.getUrlFromData(jsonText,
+    function(url, data) {
+        // open a filepicker.io save box
+        filepicker.saveAs(url, 'application/json', {'defaultSaveasName': name + '.impro'}, function(FPUrl){})
+  });
 }
 
 function clearHistHandler(resultElement,query) {
@@ -231,7 +250,9 @@ function bgColourHandler(resultElement,query) {
 function querySubmitted() {
   var queryField = document.getElementById("searchQuery");
   var query = queryField.value;
+  // add to history
   history.push(query);
+  curHistItem = history.length; // reset history scrollback
   var querys = query.split(";");
   // clear the field
   queryField.value = "";
@@ -261,6 +282,17 @@ function performQuery(query) {
   var args = parts.length < 1 ? "" : parts.join(" ");
   handler(result,args);
   return false;
+}
+
+// up arrow key history scrollback
+function handleFieldKey(e) {
+  if(e.keyCode==38) {
+    if(!history[curHistItem-1]) return true;
+    document.getElementById("searchQuery").value = history[curHistItem-1];
+    curHistItem -= 1;
+    return false;
+  }
+  return true;
 }
 
 function OnLoad() {

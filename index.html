@@ -15,6 +15,7 @@
         }
       });
     </script>
+    <script src="https://api.filepicker.io/v0/filepicker.js"></script>
 		<script type="text/javascript" src="improsent.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=PT+Sans|Paytone+One|Yanone+Kaffeesatz:400,700|Righteous|Chivo:400,900' rel='stylesheet' type='text/css'>
 		<style type="text/css">
@@ -88,7 +89,7 @@
      </table>
      <div id="queryFormContainer">
        <form onsubmit="querySubmitted();return false;">
-    	   <input type="text" id="searchQuery" placeholder="Type a command and a query then hit enter..."/>
+    	   <input type="text" id="searchQuery" placeholder="Type a command and a query then hit enter..." onkeyup="return handleFieldKey(event);"/>
     	 </form>
     	 <small>i=image | s=slab text | h=heading | b=bullet | w=wikipedia | eq=latex equation | play help=full help</small><br/>
     	 <small>

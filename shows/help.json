@@ -31,8 +31,8 @@
   ],
   [
   "h Basic Commands: Playback and Saving",
-  "b <b>play:</b> Loads the specified presentation, user created or provided.",
-  "b <b>save:</b> Saves all executed commands to the presentation specified.",
+  "b <b>play:</b> Loads the a presentation, if a pre-defined presentation is not specified in the query a filepicker.io dialog will open.",
+  "b <b>save:</b> Saves all executed commands to a json file with filepicker.io.",
   "b <b>n:</b> Advances to the next slide/command in the loaded presentation.",
   "b <b>clearhist:</b> Clears the history, any saved presentations will start here."
   ],
