@@ -6,6 +6,12 @@
   "b type 'n' and press enter at any time to move to the next slide in the help."
   ],
   [
+  "h Usage",
+  "b Improsent commands are used by typing them into the field at the bottom and hitting enter.",
+  "b Commands can be followed by a space and a query or parameter like 'i dog'.",
+  "b Pressing the up arrow key will load the last history item into the text field."
+  ],
+  [
   "h Basic Commands: Images",
   "b <b>i:</b> brings up the first medium size image result from Google Images.",
   "b <b>il:</b> brings up the first large image result from Google Images.",
