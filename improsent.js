@@ -114,6 +114,17 @@ function bulletHandler(resultElement,query) {
   newBullet.innerHTML = capitaliseFirst(query);
   
   list.appendChild(newBullet);
+  MathJax.Hub.Typeset()
+}
+
+function mathHandler(resultElement,query) {
+  var newHeader = document.createElement('h1');
+  newHeader.innerHTML = "$$$" + query + "$$$";
+  newHeader.className = "mathEquation";
+  
+  resultElement.innerHTML = '';
+  resultElement.appendChild(newHeader);
+  MathJax.Hub.Typeset()
 }
 
 // ========================================
@@ -185,14 +196,13 @@ function nextSlideHandler(resultElement,query) {
   var slide = showSlides[curSlide];
   if(!slide) return;
   curSlide++;
-  if (slide instanceof Array) {
-    // perform multiple commands in sequence
-    for(var i = 0; i < slide.length; i++) {
-      var command = slide[i];
-      performQuery(command);
-    }
-  } else {
-    performQuery(slide);
+  if (!(slide instanceof Array)) {
+    slide = slide.split(";");
+  }
+  // perform multiple commands in sequence
+  for(var i = 0; i < slide.length; i++) {
+    var command = slide[i];
+    performQuery(command);
   }
 }
 
@@ -200,6 +210,11 @@ function saveShowHandler(resultElement,query) {
   if(typeof(Storage)==="undefined") return;
   localStorage[query] = JSON.stringify({slides:history});
 }
+
+function clearHistHandler(resultElement,query) {
+  history = [];
+}
+
 
 // ========================================
 // Customization
@@ -259,9 +274,11 @@ function OnLoad() {
     "h":getHeadingHandler('ul'),
     "ho":getHeadingHandler('ol'),
     "b":bulletHandler,
+    "eq":mathHandler,
     "w":wikiDescriptHandler,
     "play":loadShowHandler,
     "save":saveShowHandler,
+    "clearhist":clearHistHandler,
     "n":nextSlideHandler,
     "bg":bgColourHandler
   }

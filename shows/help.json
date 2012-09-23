@@ -1,0 +1,43 @@
+{
+"slides":[
+  [
+  "h Improsent Help",
+  "b This show contains the improsent command reference",
+  "b type 'n' and press enter at any time to move to the next slide in the help."
+  ],
+  [
+  "h Basic Commands: Images",
+  "b <b>i:</b> brings up the first medium size image result from Google Images.",
+  "b <b>il:</b> brings up the first large image result from Google Images.",
+  "b <b>iu:</b> displays the image at the url given."
+  ],
+  [
+  "h Basic Commands: Slides",
+  "b <b>h:</b> Creates a new slide with the heading specified and a bulleted list.",
+  "b <b>ho:</b> Creates a new slide with the heading specified and an ordered list.",
+  "b <b>b:</b> Adds a list item to the slide (bullet). Inline latex can be wrapped in '$$'"
+  ],
+  [
+  "h Basic Commands: Misc",
+  "b <b>w:</b> Displays the wikipedia summary of the search query.",
+  "b <b>eq:</b> Displays a render of the given latex equation.",
+  "b <b>bg:</b> Sets the background color to the css color provided, can be hex."
+  ],
+  [
+  "h Basic Commands: Slab Text",
+  "b <b>s:</b> Displays the text using the slabText algorithm.",
+  "b It wraps text to fit into neat lines and adjusts the font sizes to fit",
+  "b The algorithm will automatically split lines but you can specify lines by separating them with ', '"
+  ],
+  [
+  "h Basic Commands: Playback and Saving",
+  "b <b>play:</b> Loads the specified presentation, user created or provided.",
+  "b <b>save:</b> Saves all executed commands to the presentation specified.",
+  "b <b>n:</b> Advances to the next slide/command in the loaded presentation.",
+  "b <b>clearhist:</b> Clears the history, any saved presentations will start here."
+  ],
+  [
+  "h Look at the source code on <a href='https://github.com/trishume/improsent'>Github</a> to learn more about how commands work."
+  ]
+]
+}

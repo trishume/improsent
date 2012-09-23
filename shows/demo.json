@@ -21,7 +21,9 @@
   "b Making your friends hair go up when you blast them!"
   ],
   ["i air ring cannon"],
-  ["s have fun!"],
+  ["s have fun!, continue for other features"],
+  ["eq \\sqrt{latex equations}"],
+  "h Inline Equations;b I like $$\\pi$$",
   ["h type 'play tutorial' to learn more."]
 ]
 }
