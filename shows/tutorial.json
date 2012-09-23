@@ -1,0 +1,46 @@
+{
+"slides":[
+  [
+  "h Welcome to Improsent",
+  "b Improsent is a tool for improvising presentations",
+  "b It allows you to type commands to quickly create slides and add images <b>as you present</b>",
+  "b type 'n' and press enter at any time to move to the next slide in the tutorial presentation."
+  ],
+  [
+  "h Basic Commands: Images",
+  "b To execute a command, type it's name and then the query in the field and hit enter.",
+  "b The 'i' command brings up the first image result from Google Images.",
+  "b Try typing something like 'i dog' to get an image of a dog. Then type 'n' to continue with the tutorial.",
+  "b You can also use the 'il' command to search for larger images."
+  ],
+  [
+  "h Basic Commands: Wikipedia",
+  "b The 'w' command displays the wikipedia summary of the search query.",
+  "b Try typing something like 'w dragon'. Then type 'n' to continue with the tutorial."
+  ],
+  [
+  "h Basic Commands: Slab Text",
+  "b The 's' command displays the text using the slabText algorithm.",
+  "b It wraps text to fit into neat lines and adjusts the font sizes to fit",
+  "b The algorithm will automatically split lines but you can specify lines by separating them with ', '",
+  "b Try typing something like 's this is, super, cool'. Then type 'n' to continue with the tutorial."
+  ],
+  [
+  "h Basic Commands: Boring Slides",
+  "b The 'h' command will create a new normal slide with the specified heading.",
+  "b You can then use the 'b' command to add bullet points to the slide.",
+  "b Tip: Improsent will automatically title case headings and capitalize bullets",
+  "b Try typing something like 'h Test' and then 'b Testing testing 123'. Then type 'n' to continue with the tutorial."
+  ],
+  [
+  "h Further Help",
+  "b Have a look at the demo presentation. Run 'play demo'",
+  "b To see the tutorial again type 'play tutorial'",
+  "b Look at the bottom to see a quick command reference",
+  "b Try things out, try live presenting a brilliant speech about tortoises or something..."
+  ],
+  [
+  "s That's all! Now you play around"
+  ]
+]
+}

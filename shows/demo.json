@@ -1,0 +1,27 @@
+{
+"slides":[
+  ["h Improsent demo","b Type 'n' and press Enter to move throught the presentation."],
+  ["s vortex, rings"],
+  ["s How do you, shoot air?"],
+  ["i airzooka"],
+  ["i smoke ring"],
+  ["w vortex ring"],
+  [
+  "h How do they work?",
+  "b a perfect vortex rings has zero air resistance",
+  "b the air in a vortex ring stays together, that's why smoke rings work",
+  "b what does this look like?"
+  ],
+  ["i air vortex ring"],
+  ["i vortex ring"],
+  [
+  "h \"Practical\" Applications",
+  "b 4 blimps tied together in a ring with motors to spin them could move very fast with low resistance.",
+  "b The acceleration of these blimps would create an air vortex that could pulverize buildings #defenseapplications",
+  "b Making your friends hair go up when you blast them!"
+  ],
+  ["i air ring cannon"],
+  ["s have fun!"],
+  ["h type 'play tutorial' to learn more."]
+]
+}

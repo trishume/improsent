@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<title>Improsent</title>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+		<link href="slabText/css/slabtext.css" rel="stylesheet" type="text/css" />
+		<script src="slabText/js/jquery.slabtext.min.js"></script>
+		<script type="text/javascript" src="improsent.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans|Paytone+One|Yanone+Kaffeesatz:400,700|Righteous|Chivo:400,900' rel='stylesheet' type='text/css'>
+		<style type="text/css">
+		  body {
+  		  background-color: beige;
+		  }
+		  html, body, #wrapper {
+         height:100%;
+         width: 100%;
+         margin: 0;
+         padding: 0;
+         border: 0;
+      }
+      #wrapper #content {
+         vertical-align: middle;
+         text-align: center;
+         font-family: sans-serif;
+      }
+      #queryFormContainer {
+        position:fixed;
+        top: 90%;
+        left: 50%;
+        margin-left: -250px;
+        text-align: center;
+      }
+      #searchQuery {
+        width: 500px;
+      }
+      
+      .slabHeading {
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: "Arial Black";
+      }
+      .slideHeading {
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 60pt;
+        margin-bottom: -10px;
+      }
+      #slideList {
+        width: 850px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 40pt;
+      }
+      
+      .wikiText {
+        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        
+        font-family: serif;
+        font-size: 20pt;
+      }
+		</style>
+	</head>
+	<body>
+  	 <table id="wrapper">
+        <tr>
+           <td id="content"></td>
+        </tr>
+     </table>
+     <div id="queryFormContainer">
+       <form onsubmit="querySubmitted();return false;">
+    	   <input type="text" id="searchQuery" placeholder="Type a command and a query then hit enter..."/>
+    	 </form>
+    	 <small>i=image | s=slab text | h=heading | b=bullet | w=wikipedia</small><br/>
+    	 <small>
+    	   <strong>Improsent</strong> by <a href="http://tristan.hume.ca/">Tristan Hume</a> | 
+    	   powered by <a href="http://google.com">Google</a> and <a href="http://wikipedia.org">Wikipedia</a>
+    	 </small>
+     </div>
+	</body>
+</html>
