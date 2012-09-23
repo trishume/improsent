@@ -22,6 +22,8 @@ function imageSearchHandlerSize(size) {
     // Restrict to extra large images only
     imageSearch.setRestriction(google.search.ImageSearch.RESTRICT_IMAGESIZE,
                                size);
+    imageSearch.setRestriction(google.search.Search.RESTRICT_SAFESEARCH,
+                                google.search.Search.SAFESEARCH_STRICT);
     imageSearch.setResultSetSize(8);
     
     // Here we set a callback so that anytime a search is executed, it will call
@@ -319,7 +321,7 @@ function OnLoad() {
   var url = location.href;
   if(url.indexOf("?") != -1) {
     var hash = url.substring(url.indexOf("?")+1);
-    performQuery("play " + hash);
+    if(hash != '') performQuery("play " + hash);
   }
 }
 
