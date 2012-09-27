@@ -201,7 +201,7 @@ function loadShowHandler(resultElement,query) {
     });
     return;
   }
-  $.getJSON('shows/'+query+'.json', loadShow);
+  $.getJSON('shows/'+query+'.json?' + Math.random(), loadShow);
 }
 function nextSlideHandler(resultElement,query) {
   if(!showSlides) return;

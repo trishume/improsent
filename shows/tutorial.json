@@ -26,17 +26,31 @@
   "b Try typing something like 's this is, super, cool'. Then type 'n' to continue with the tutorial."
   ],
   [
-  "h Basic Commands: Boring Slides",
+  "h Basic Commands: Normal Slides",
   "b The 'h' command will create a new normal slide with the specified heading.",
   "b You can then use the 'b' command to add bullet points to the slide.",
   "b Tip: Improsent will automatically title case headings and capitalize bullets",
   "b Try typing something like 'h Test' and then 'b Testing testing 123'. Then type 'n' to continue with the tutorial."
   ],
   [
+  "h Basic Commands: Saving and loading",
+  "b The 'save' command uses allows you to save your show to a number of services, including Dropbox.",
+  "b You can load saved shows using the 'load' command, use the 'n' command to advance through it.",
+  "b The 'clearhist' command clears the history so that any show you save will start at that point.",
+  "b Once you are done the tutorial, try running 'clearhist', creating a show and then running 'save'."
+  ],
+  [
+  "h Other Features",
+  "b $$\\LaTeX$$ is supported using the 'eq' command and in bullets by wrapping text in two dollar signs.",
+  "b You can run multiple commands at a time by separating them with ';'.",
+  "b Press the up arrow key to recall previous commands.",
+  "b Run 'play help' for a full command reference. There is a short command reference below the command field."
+  ],
+  [
   "h Further Help",
   "b Have a look at the demo presentation. Run 'play demo'",
   "b To see the tutorial again type 'play tutorial'",
-  "b Look at the bottom to see a quick command reference",
+  "b Check out the source on <a href='https://github.com/trishume/improsent'>Github</a>",
   "b Try things out, try live presenting a brilliant speech about tortoises or something..."
   ],
   [
