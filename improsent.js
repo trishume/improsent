@@ -305,6 +305,7 @@ function OnLoad() {
     "image":imageSearchHandlerSize(google.search.ImageSearch.IMAGESIZE_MEDIUM),
     "st":slabTextHandler,
     "s":slabTextHandler,
+    "t":slabTextHandler,
     "h":getHeadingHandler('ul'),
     "ho":getHeadingHandler('ol'),
     "b":bulletHandler,
