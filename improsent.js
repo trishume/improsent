@@ -8,7 +8,7 @@ var curHistItem = 0;
 
 google.load('search', '1');
 function displayImageHandler(resultElement,query) {
-  // Grab our content div, clear it.
+  // Grab our content div, clear hit.
   var newImg = document.createElement('img');
   // There is also a result.url property which has the escaped version
   newImg.src = query;
@@ -25,7 +25,7 @@ function imageSearchHandlerSize(size) {
     imageSearch.setRestriction(google.search.Search.RESTRICT_SAFESEARCH,
                                 google.search.Search.SAFESEARCH_STRICT);
     imageSearch.setResultSetSize(8);
-    
+
     // Here we set a callback so that anytime a search is executed, it will call
     // the function and pass it our ImageSearch searcher.
     // When a search completes, our ImageSearch object is automatically
@@ -47,13 +47,13 @@ function imageSearchHandlerSize(size) {
         newImg.onerror = nextImage;
         // Add a next handler
         handlers["ni"] = nextImage;
-      
+
         // Put our title + image in the content
         resultElement.innerHTML = '';
         resultElement.appendChild(newImg);
       }
     }, null);
-    
+
     imageSearch.execute(query);
   }
 }
@@ -65,7 +65,7 @@ function imageSearchHandlerSize(size) {
 function slabTextHandler(resultElement,query) {
   var newHeader = document.createElement('h1');
   newHeader.className = "slabHeading";
-  
+
   if(query.indexOf(", ") != -1) {
     var stS = "<span class='slabtext'>",
       stE = "</span>",
@@ -74,10 +74,10 @@ function slabTextHandler(resultElement,query) {
   } else {
     newHeader.innerHTML = query.toUpperCase();
   }
-  
+
   resultElement.innerHTML = '';
   resultElement.appendChild(newHeader);
-  
+
   // slab it
   $(".slabHeading").slabText();
 }
@@ -98,10 +98,10 @@ function getHeadingHandler(bodyElem) {
     var newHeader = document.createElement('h1');
     newHeader.className = "slideHeading";
     newHeader.innerHTML = toTitleCase(query);
-    
+
     var newList = document.createElement(bodyElem);
     newList.id = "slideList";
-    
+
     resultElement.innerHTML = '';
     resultElement.appendChild(newHeader);
     resultElement.appendChild(newList);
@@ -111,11 +111,11 @@ function getHeadingHandler(bodyElem) {
 function bulletHandler(resultElement,query) {
   var list = document.getElementById("slideList");
   if(!list) return false;
-  
+
   var newBullet = document.createElement('li');
   newBullet.className = "slideBullet";
   newBullet.innerHTML = capitaliseFirst(query);
-  
+
   list.appendChild(newBullet);
   MathJax.Hub.Typeset()
 }
@@ -124,7 +124,7 @@ function mathHandler(resultElement,query) {
   var newHeader = document.createElement('h1');
   newHeader.innerHTML = "$$$" + query + "$$$";
   newHeader.className = "mathEquation";
-  
+
   resultElement.innerHTML = '';
   resultElement.appendChild(newHeader);
   MathJax.Hub.Typeset()
@@ -154,16 +154,16 @@ function wikiDescriptHandler(resultElement,query) {
     	callWikipediaAPI(redirect,wikipediaHTMLResult);
         return;
     }
-    
+
     // make the element
     var newHeader = document.createElement('h1');
     newHeader.className = "slideHeading";
     newHeader.innerHTML = data.parse.displaytitle;
-    
+
     var body = document.createElement('p');
     body.className = "wikiText";
     body.innerHTML = readData.find('p')[0].innerHTML;
-    
+
     resultElement.innerHTML = '';
     resultElement.appendChild(newHeader);
     resultElement.appendChild(body);
@@ -258,7 +258,7 @@ function querySubmitted() {
   var querys = query.split(";");
   // clear the field
   queryField.value = "";
-  
+
   for(var i = 0; i < querys.length; i++) {
     performQuery(querys[i]);
   }
@@ -318,7 +318,7 @@ function OnLoad() {
     "bg":bgColourHandler
   }
   document.getElementById("searchQuery").focus();
-  
+
   var url = location.href;
   if(url.indexOf("?") != -1) {
     var hash = url.substring(url.indexOf("?")+1);
